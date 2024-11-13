@@ -34,7 +34,7 @@ export default function Auth() {
     // Animación del interruptor cuando cambia isChecked
     Animated.timing(translateX, {
       toValue: isChecked ? 12 : 0,
-      duration: 1200,
+      duration: 800,
       useNativeDriver: true,
     }).start();
   }, [isChecked]);

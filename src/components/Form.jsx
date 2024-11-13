@@ -2,6 +2,7 @@ import { StyleSheet, View,TextInput, TouchableOpacity, Text } from 'react-native
 import { Picker } from "@react-native-picker/picker";
 import { React, useState } from "react";
 import { getAuth, signOut } from "firebase/auth";
+import styles from '../../styles';
 
 
 export default function Form(props) {
@@ -26,13 +27,13 @@ function singOut(){
         <TextInput 
           placeholder="Prestamo"
           keyboardType="numeric"
-          style={styles.input}
+          style={[styles.midInput, styles.inputlarge]}
           onChange={e=>setCapital(e.nativeEvent.text)} //lo que escriba se guarda en text 
         />
         <TextInput 
           placeholder="Interés %"
           keyboardType="numeric"
-          style={[styles.input, styles.inputPercentage]}
+          style={[styles.midInput, styles.inputPercentage]}
           onChange={e=>setInterest(e.nativeEvent.text)} // Guarda el valor de Interés
         />
     </View>
@@ -43,7 +44,7 @@ function singOut(){
           selectedValue={selectedLanguage}
           onValueChange={(itemValue, itemIndex) => {
           setSelectedLanguage(itemValue)
-          setMonths(itemValue) // Guarda el valor de Meses
+          setMonths(itemValue)
           }
           }>
 
@@ -55,9 +56,9 @@ function singOut(){
         </Picker>
     </View>
 
-    <View style={styles.container}>
-        <TouchableOpacity style={styles.button}  onPress={singOut}>
-          <Text style={styles.buttonText}>Cerrar sesion</Text>
+    <View style={styles.containerForm}>
+        <TouchableOpacity style={[styles.button, styles.buttonWhite]}  onPress={singOut}>
+          <Text style={styles.buttonTextWhite}>Cerrar sesion</Text>
         </TouchableOpacity>
     </View>
 
@@ -66,39 +67,4 @@ function singOut(){
     
   );
 }
-
-const styles = StyleSheet.create({
-  viewForm: {
-    backgroundColor: '#1541be',
-    width:'85%',
-    height: '60%',
-    borderRadius:20,
-    padding : 10
-  },
-  input: {
-    height:'80%',
-    width:'65%',
-    backgroundColor:'#fff',
-    marginBottom:5,
-    marginTop:10,
-    color:'#000',
-    borderWidth:1,
-    borderColor: '#1541be',
-    borderRadius:3,
-    padding: 5
-  },
-  inputPercentage:{
-    width:'35%',
-    padding:10
-  },
-  viewInputs:{
-    flexDirection:'row',
-  },
-  inputpick:{
-    backgroundColor:'#fff',
-    borderRadius:5,
-    borderWidth:1,
-    paddingVertical:10,
-}
-})
 

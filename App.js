@@ -21,11 +21,11 @@ export default function App() {
     setErrorMessage('');
 
     if (!capital) {
-      setErrorMessage('Falta el capital');
+      setErrorMessage('Ingresa el capital');
     } else if (!interest) {
-      setErrorMessage('Falta la tasa de interés');
+      setErrorMessage('Ingresa la tasa de interés');
     } else if (!months) {
-      setErrorMessage('Falta la cantidad de meses');
+      setErrorMessage('Selecciona la cantidad de meses');
     } else {
       const i = interest / 100;
       const fee = capital / ((1 - Math.pow(1 + i, -months)) / i);
@@ -33,7 +33,6 @@ export default function App() {
         monthlyFee: fee.toFixed(2),
         totalPayable: (fee * months).toFixed(2),
       });
-      console.log(total);
     }
   };
 
@@ -57,7 +56,6 @@ export default function App() {
     return (
       <SafeAreaView style={styles.background}>
         <Auth />
-        <StatusBar style="auto" />
       </SafeAreaView>
         
     );
@@ -71,8 +69,7 @@ export default function App() {
             setInterest={setInterest}
             setMonths={setMonths}
           />
-        </View>
-          
+        </View >
           <ResultCalculation
           capital={capital}
           interest={interest}
