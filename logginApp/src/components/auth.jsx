@@ -25,7 +25,7 @@ export default function Auth() {
     // Animación de desvanecimiento cuando se cambia el formulario
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 1200,
+      duration: 800,
       useNativeDriver: true,
     }).start();
   }, [islog]);

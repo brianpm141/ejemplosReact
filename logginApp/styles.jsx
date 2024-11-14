@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   buttonTextWhite: {
     fontWeight: '600',
-    color: 'fff',
+    color: '#fff',
   },
   // Loggin
 
