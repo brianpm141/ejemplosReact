@@ -2,10 +2,10 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 
 
-export default function BajasView() {
+export default function Cumples() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>bajas</Text>
+        <Text>Cumpleaños</Text>
       </View>
     );
   }

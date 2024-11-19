@@ -11,9 +11,16 @@ const dynamicFontSizeOption = width * 0.04;
 const styles = StyleSheet.create({
 
 general: {
-    backgroundColor: '#d1d1d1',
-    paddingVertical: '5%'
+  backgroundColor: '#d1d1d1',
+  paddingVertical: '5%',
+  flex:1
 },
+homeButtons: {
+    marginTop: '10%',
+    alignItems: 'center',
+    height:'75%',
+    minWidth: '100%',
+  },
 // --------------------------------------------Componentes Altas----------------------------
 formAltas: {
     alignItems: 'center',
@@ -64,6 +71,20 @@ formAltas: {
     fontWeight: '600',
     color: '#1c19b0',
   },
+  buttonNavigator: {
+    width: '60%'
+  },
+// Contenedores 
+
+  titleContainer: {
+    height: '10%',
+    width: '100%',
+    alignItems: 'center',
+    fontSize: dynamicFontSizeTitle
+  },
+  workerContainer:{
+    
+  } 
 })
 
 export default styles
