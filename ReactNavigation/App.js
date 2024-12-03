@@ -5,14 +5,13 @@ import { createStackNavigator } from '@react-navigation/stack'; // Importar Stac
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Image, SafeAreaView } from 'react-native';
 import AltasView from './scr/components/views/altas';
-import BajasView from './scr/components/views/bajas';
-import ModView from './scr/components/views/modificaciones';
 import ReporteView from './scr/components/views/reportes';
 import HomeScreen from './scr/components/views/homeScreen';
 import Cumples from './scr/components/views/cumple';
 import app from './scr/utils/firebase';
 import stylesLog from './stylesLog';
 import Auth from './scr/components/loggin/auth';
+import ModView from './scr/components/views/modificaciones';
 import styles from './styles';
 
 const Tab = createBottomTabNavigator();
@@ -30,8 +29,10 @@ function InternalStack() {
       <Stack.Screen 
         name="Cumples" 
         component={Cumples} 
-        options={{ title: 'Cumpleaños' }} 
+        options={{ title: 'Cumple' }} 
       />
+      <Stack.Screen name="ReporteView" component={ReporteView} />
+      <Stack.Screen name="ModView" component={ModView} />
     </Stack.Navigator>
   );
 }
@@ -53,36 +54,12 @@ function RootStack() {
         }}  
       />
       <Tab.Screen 
-        name="Bajas" 
-        component={BajasView}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Image 
-              source={require('./assets/icons/baja.png')}
-              style={{ width: size, height: size, tintColor: color }} 
-            />
-          ),
-        }}  
-      />
-      <Tab.Screen 
         name="Inicio" 
         component={InternalStack} // Cambiar a InternalStack
         options={{
           tabBarIcon: ({ color, size }) => (
             <Image 
               source={require('./assets/icons/home.png')}
-              style={{ width: size, height: size, tintColor: color }} 
-            />
-          ),
-        }} 
-      />
-      <Tab.Screen 
-        name="Modificaciones" 
-        component={ModView}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Image 
-              source={require('./assets/icons/editar.png')}
               style={{ width: size, height: size, tintColor: color }} 
             />
           ),

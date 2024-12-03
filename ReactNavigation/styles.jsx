@@ -7,7 +7,7 @@ const dynamicFontSize = width * 0.06;
 const dynamicFontSizeTitle = width * 0.08;
 const dynamicFontSizeText = width * 0.05;
 const dynamicFontSizeOption = width * 0.04;
-const dynamicFontSizeMinimal = width * 0.02;
+const dynamicFontSizeMinimal = width * 0.03;
 
 
 const styles = StyleSheet.create({
@@ -108,7 +108,7 @@ formAltas: {
     backgroundColor: '#eee',
     textAlign: 'center',
     minHeight: '15%',
-    minWidth:"40%",
+    minWidth: "60%",
     margin : '2%',
     borderRadius: 10, 
     fontSize: dynamicFontSizeOption
@@ -157,6 +157,36 @@ formAltas: {
     alignItems: 'center',
     fontSize: dynamicFontSizeTitle
   },
+
+//-------------------------------------------Cruds------------------------------------------
+
+table: {
+  marginTop: '5%'
+},
+row: {
+  flexDirection: 'row',
+},
+cellEdit: {
+  flex: 1,
+  alignItems: 'center',
+  pading:'5%'
+},
+cellDelete: {
+  flex: 1,
+  alignItems: 'center',
+  pading:'5%'
+},
+image:{
+  width: 30,
+  height: 30, 
+  resizeMode: 'contain'
+},
+optionText:{
+  fontSize: dynamicFontSizeMinimal,
+  textAlign:'center',
+  fontWeight: 'bold',
+}
+
 })
 
 export default styles
